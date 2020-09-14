@@ -31,7 +31,7 @@ ul li a
     box-sizing: border-box;
     text-decoration: none;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(0deg, #ddd, #fff);
+    background: linear-gradient(0deg, #34bcaa, #debf12);
     transition: .5s;
 }
 ul li a:hover
@@ -43,11 +43,11 @@ ul li a .fab
     width: 100%;
     height: 100%;
     display: block;
-    background: linear-gradient(0deg, #fff, #ddd);
+    background: linear-gradient(0deg, #debf12, #34bcaa);
     border-radius: 50%;
     line-height: calc(60px - 12px);
     font-size: 24px;
-    color: #808080;
+    color: #000;
     transition: .5s;
 }
 ul li:nth-child(1) a:hover .fab
@@ -76,11 +76,11 @@ ul li a .fa
     width: 100%; 
     height: 100%; 
     display: block; 
-    background: linear-gradient(0deg, #fff, #ddd); 
+    background: linear-gradient(0deg, #34bcaa, #debf12); 
     border-radius: 50%; 
     line-height: calc(60px - 12px); 
     font-size: 24px; 
-    color: #808080; 
+    color: #000; 
     transition: .5s;
 }
 
