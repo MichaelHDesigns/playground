@@ -104,23 +104,23 @@ ul li a .fab
 }
 ul li:nth-child(1) a:hover .fab
 {
-    color: #3b5998;
+    color: #34bcaa;
 }
 ul li:nth-child(2) a:hover .fab
 {
-    color: #00aced;
+    color: #34bcaa;
 }
 ul li:nth-child(3) a:hover .fab
 {
-    color: #dd4b39;
+    color: #34bcaa;
 }
 ul li:nth-child(4) a:hover .fab
 {
-    color: #007bb6;
+    color: #34bcaa;
 }
 ul li:nth-child(5) a:hover .fab
 {
-    color: #e1306c;
+    color: #34bcaa;
 }
 
 ul li a .fa
@@ -138,21 +138,21 @@ ul li a .fa
 
 ul li:nth-child(1) a:hover .fa 
 { 
-color: #3b5998;
+color: #34bcaa;
 }
 ul li:nth-child(2) a:hover .fa
 { 
-color: #00aced;
+color: #34bcaa;
 }
 ul li:nth-child(3) a:hover .fa
 { 
-color: #dd4b39;
+color: #34bcaa;
 }
 ul li:nth-child(4) a:hover .fa
 { 
-color: #007bb6;
+color: #34bcaa;
 }
 ul li:nth-child(5) a:hover .fa
 { 
-color: #e1306c;
+color: #34bcaa;
 }
