@@ -4,6 +4,180 @@ body
     padding: 0;
     background: #fff;
 }
+
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+@mixin neumorph($distance, $color) {
+  box-shadow: -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
+      rgba(lighten($color, 10%), 0.43),
+    $distance $distance calc(#{$distance} * 2) 0 rgba(darken($color, 30%), 0.41);
+}
+
+@mixin inset-neumorph($distance, $color) {
+  box-shadow: inset -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
+      rgba(lighten($color, 10%), 0.43),
+    inset $distance $distance calc(#{$distance} * 2) 0
+      rgba(darken($color, 30%), 0.41);
+}
+
+@mixin text-neumorph($color, $distance) {
+  color: $color;
+  text-shadow: $distance $distance 10px darken($color, 10%),
+    -1 * $distance -1 * $distance 10px lighten($color, 10%);
+}
+
+$color: #4a678e;
+$color: lightgray;
+$color: #555;
+// $color: darken(salmon,10%);
+// $color: darken(lightgreen,30%);
+// $color: lightcoral;
+
+$accent: white;
+// $accent: #4a678e;
+// $accent: #555;
+
+.btn {
+  @include neumorph(2px, $color);
+  background: $color;
+  color: $accent;
+  border: none;
+  font-size: medium;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  margin: 1em;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.4s ease;
+  &.btn-link {
+    text-decoration: underline;
+  }
+  &:active {
+    @include inset-neumorph(2px, $color);
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  ::selection {
+    background: $accent;
+    color: $color;
+    text-shadow: none;
+  }
+  
+}
+
+.container {
+  overflow: auto;
+  background: $color;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", "sans-serif";
+  transition: background 0.4s ease;
+  .outer-card {
+    $radius: 20px;
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    min-height: 400px;
+    border-radius: $radius;
+    color: $accent;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    @include neumorph(5px, $color);
+    transition: background 0.4s ease;
+    .title {
+      max-width: calc(100% - 40px);
+      margin: 0.5em 0 0 0;
+      @include text-neumorph($color, 5px);
+      font-size: 50px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: lighten($color, 2.5%);
+      padding: 0 1em;
+      box-sizing: border-box;
+      flex-wrap: no-wrap;
+    }
+    .content {
+      @include inset-neumorph(2px, $color);
+      padding: 1em;
+      border-radius: 5px;
+      width: 100%;
+      margin: 1em;
+      max-height: 40vh;
+      overflow: auto;
+    }
+    .buttons {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .info-card {
+      border-radius: $radius;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      @include inset-neumorph(2px, $color);
+      box-sizing: border-box;
+      background: $color;
+      display: flex;
+      color: $color;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      clip-path: circle(35px at calc(100% - 50px) 50px);
+      transition: clip-path 0.5s ease, color 0.4s ease, background 0.4s ease;
+      background: $accent;
+      cursor: help;
+      .title {
+        border: none;
+        color: $accent;
+        text-shadow: none;
+        font-size: xx-large;
+        text-transform: none;
+      }
+      .info {
+        margin: 30px 30px 0 0;
+        font-size: larger;
+        font-weight: bold;
+        border: solid 3px $color;
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        border-radius: 50%;
+        padding: 5px;
+        transition: border-color 0.4s ease;
+      }
+      .content {
+        width: 100%;
+        margin: 2em;
+        font-size: large;
+        @include neumorph(2px, $color);
+      }
+      &:hover {
+        clip-path: circle(100%);
+        background: $color;
+        color: $accent;
+        .info {
+          border-color: $accent;
+        }
+      }
+    }
+  }
+}
+
+
 ul
 {
     position: absolute;
