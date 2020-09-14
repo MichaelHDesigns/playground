@@ -122,37 +122,3 @@ ul li:nth-child(5) a:hover .fab
 {
     color: #34bcaa;
 }
-
-ul li a .fa
-{ 
-    width: 100%; 
-    height: 100%; 
-    display: block; 
-    background: linear-gradient(0deg, #34bcaa, #debf12); 
-    border-radius: 50%; 
-    line-height: calc(60px - 12px); 
-    font-size: 24px; 
-    color: #000; 
-    transition: .5s;
-}
-
-ul li:nth-child(1) a:hover .fa 
-{ 
-color: #34bcaa;
-}
-ul li:nth-child(2) a:hover .fa
-{ 
-color: #34bcaa;
-}
-ul li:nth-child(3) a:hover .fa
-{ 
-color: #34bcaa;
-}
-ul li:nth-child(4) a:hover .fa
-{ 
-color: #34bcaa;
-}
-ul li:nth-child(5) a:hover .fa
-{ 
-color: #34bcaa;
-}
