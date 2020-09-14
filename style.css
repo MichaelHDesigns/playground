@@ -66,8 +66,11 @@ $accent: white;
 .container {
   overflow: auto;
   background: $color7;
+  position: absolute;
+    top: -15%;
+    left: 2%;  
   display: flex;
-  width: 100vw;
+  width: 78vw;
   height: 100vh;
   align-items: center;
   justify-content: center;
@@ -176,7 +179,7 @@ $accent: white;
 ul
 {
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
