@@ -204,13 +204,13 @@ ul li a
     padding: 6px;
     box-sizing: border-box;
     text-decoration: none;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 15px #34bcaa;
     background: linear-gradient(0deg, #34bcaa, #debf12);
     transition: .5s;
 }
 ul li a:hover
 {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 2px 5px #debf12; 
 }
 ul li a .fab
 {
