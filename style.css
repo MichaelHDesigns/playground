@@ -3,6 +3,11 @@ body
     margin: 0;
     padding: 0;
     background: #fff;
+    ::selection {
+    background: $accent;
+    color: $color7;
+    text-shadow: none;
+  } 
 }
 
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
@@ -57,16 +62,6 @@ $accent: white;
   }
 }
 
- body {
-  padding: 0;
-  margin: 0;
-  ::selection {
-    background: $accent;
-    color: $color7;
-    text-shadow: none;
-  } 
-  
-}
 
 .container {
   overflow: auto;
