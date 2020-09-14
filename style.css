@@ -2,9 +2,9 @@ body
 {
     margin: 0;
     padding: 0;
-    background: #000;
+    
 }
-ul
+.container .ul
 {
     position: absolute;
     top: 50%;
@@ -13,6 +13,7 @@ ul
     margin: 0;
     padding: 0;
     display: flex;
+    background: #000;
 }
 ul li
 {
