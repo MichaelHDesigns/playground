@@ -1,178 +1,73 @@
-body
-{
-    margin: 0;
-    padding: 0;
+/* variables */
+$bkg: #f7f8fc;
+$l-grad-hex-100: #efeff6;
+$l-grad-rgba-100: rgba(179, 202, 226, 0.28);
+
+$d-grad-100: dark;
+
+body{
+   //background: linear-gradient(318.32deg, #C3D1E4 0%, #DDE7F3 55%, #D4E0ED 100%);
     background: #fff;
-    ::selection {
-    background: $accent;
-    color: $color7;
-    text-shadow: none;
-  } 
+    min-height: 100vh;
+}
+.wrapper{
+  margin: 60px auto;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
-
-@mixin neumorph($distance, $color7) {
-  box-shadow: -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
-      rgba(lighten($color7, 10%), 0.43),
-    $distance $distance calc(#{$distance} * 2) 0 rgba(darken($color7, 30%), 0.41);
+.neumorphism {
+  background-color: #34bcaa;
+  //dark
+  box-shadow: 9px 9px 16px #34bcaa -9px -9px 16px #debf12;
+  //light
+  //box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48), -4px -2px 16px #FFFFFF;
 }
 
-@mixin inset-neumorph($distance, $color7) {
-  box-shadow: inset -#{$distance} -#{$distance} calc(#{$distance} * 2) 0
-      rgba(lighten($color7, 10%), 0.43),
-    inset $distance $distance calc(#{$distance} * 2) 0
-      rgba(darken($color7, 30%), 0.41);
-}
-
-@mixin text-neumorph($color7, $distance) {
-  color: $color7;
-  text-shadow: $distance $distance 10px darken($color7, 10%),
-    -1 * $distance -1 * $distance 10px lighten($color7, 10%);
-}
-
-$color7: #4a678e;
-$color7: lightgray;
-$color7: #555;
-// $color7: darken(salmon,10%);
-// $color7: darken(lightgreen,30%);
-// $color7: lightcoral;
-
-$accent: white;
-// $accent: #4a678e;
-// $accent: #555;
-
-.btn {
-  @include neumorph(2px, $color7);
-  background: $color7;
-  color: $accent;
-  border: none;
-  font-size: medium;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  margin: 1em;
-  cursor: pointer;
-  outline: none;
-  transition: background 0.4s ease;
-  &.btn-link {
-    text-decoration: underline;
-  }
-  &:active {
-    @include inset-neumorph(2px, $color7);
-  }
-}
-
-
-.container {
-  overflow: auto;
-  background: $color7;
-  position: absolute;
-    top: -15%;
-    left: 2%;  
-  display: flex;
-  width: 78vw;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: "Nunito", "sans-serif";
-  transition: background 0.4s ease;
-  .outer-card {
-    $radius: 20px;
-    position: relative;
-    width: 90%;
-    max-width: 700px;
-    min-height: 400px;
-    border-radius: $radius;
-    color: $accent;
+.card-w{
+  
+  .card{
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    @include neumorph(5px, $color7);
-    transition: background 0.4s ease;
-    .title {
-      max-width: calc(100% - 40px);
-      margin: 0.5em 0 0 0;
-      @include text-neumorph($color7, 5px);
-      font-size: 50px;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      color: lighten($color7, 2.5%);
-      padding: 0 1em;
-      box-sizing: border-box;
-      flex-wrap: no-wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
+    border-radius: 30px;
+    position: relative;
+  background: transparent;
+  border-radius: 20px;
+  border: 1px solid #34bcaa;
+    box-shadow: 9px 9px 16px #34bcaa,
+      -9px -9px 16px #debf12,
+       inset 3px 3px 7px #34bcaa, 
+      inset -3px -3px 7px #FFFFFF;
+    background: linear-gradient(318.32deg, #debf12 0%, #34bcaa 55%, #debf12 100%);
+
+    .card__icon{
+      
+      
     }
-    .content {
-      @include inset-neumorph(2px, $color7);
-      padding: 1em;
-      border-radius: 5px;
-      width: 100%;
-      margin: 1em;
-      max-height: 40vh;
-      overflow: auto;
-    }
-    .buttons {
-      display: flex;
-      width: 100%;
-      justify-content: flex-end;
-      align-items: center;
-    }
-    .info-card {
-      border-radius: $radius;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      left: 0;
-      top: 0;
-      @include inset-neumorph(2px, $color7);
-      box-sizing: border-box;
-      background: $color7;
-      display: flex;
-      color: $color7;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-content: flex-start;
-      clip-path: circle(35px at calc(100% - 50px) 50px);
-      transition: clip-path 0.5s ease, color 0.4s ease, background 0.4s ease;
-      background: $accent;
-      cursor: help;
-      .title {
-        border: none;
-        color: $accent;
-        text-shadow: none;
-        font-size: xx-large;
-        text-transform: none;
-      }
-      .info {
-        margin: 30px 30px 0 0;
-        font-size: larger;
-        font-weight: bold;
-        border: solid 3px $color7;
-        height: 25px;
-        width: 25px;
-        text-align: center;
-        border-radius: 50%;
-        padding: 5px;
-        transition: border-color 0.4s ease;
-      }
-      .content {
-        width: 100%;
-        margin: 2em;
-        font-size: large;
-        @include neumorph(2px, $color7);
-      }
-      &:hover {
-        clip-path: circle(100%);
-        background: $color7;
-        color: $accent;
-        .info {
-          border-color: $accent;
-        }
-      }
+    .card__text{
+      text-align: center;
+      color: #fff;
+      
     }
   }
+}
+
+
+
+/* inset */
+.card.inset {
+    box-shadow: inset 3px 3px 7px #34bcaa, inset -3px -3px 7px #debf12;
+    i {
+        text-shadow: 1px 1px 1px #34bcaa, 0 0 0 #000, 1px 1px 1px #debf12;
+    }
+}
+
+.card.active {
+       box-shadow: 9px 9px 16px #34bcaa,
+      -9px -9px 16px #debf12,
+       inset 3px 3px 7px #34bcaa, 
+      inset -3px -3px 7px #FFFFFF;
+    background: linear-gradient(318.32deg, #debf12 0%, #34bcaa 55%, #debf12 100%);
 }
 
 
